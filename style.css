@@ -160,3 +160,41 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+/* Centrar el <dialog> en la parte superior */
+/* Ventana emergente (dialog) estética y con aire */
+#cajaEmergente[open] {
+  position: fixed;          /* para poder ubicarlo */
+  top: 24px;                /* centrado en la parte superior */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;                /* cancela el centrado por defecto */
+  padding: 20px 24px;       /* más aire interno */
+  min-width: 320px;         /* evita que se vea muy justa */
+  max-width: 520px;         /* tamaño cómodo en desktop */
+  width: calc(100% - 48px); /* respira en móviles */
+  background: var(--color-white);
+  border: 2px solid #000;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Fondo atenuado detrás del modal */
+#cajaEmergente::backdrop {
+  background: rgba(0,0,0,.35);
+}
+
+/* Texto del mensaje más legible */
+#textoCaja {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* Un poco de espacio sobre el botón de cerrar */
+#cajaEmergente form {
+  margin-top: 8px;
+}
+
